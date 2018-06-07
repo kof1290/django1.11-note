@@ -42,9 +42,9 @@
 - [Model](#model)
     - define and use
     - Fields
-        - relationship `没有多对一关系`
+        - relationship
             - OneToOne
-            - OneToMany
+            - ManyToOne
             - ManyToMany
     - Meta options
     - Model methods
@@ -1369,6 +1369,7 @@ Meta是非常有用的，[更多参考信息](https://docs.djangoproject.com/en/
 - 只有第一个`Meta`有效，其他的都会被忽略
 - 如果没有设置主键，会出现`id`字段的冲突，前面有说过如果不设置主键，django会自动设置一个自增长`id`主键，所以要自己设置主键或者设置一个共同的父类，并用`OneToOneField`声明
 
+---
 
     class Article(models.Model):
         article_id = models.AutoField(primary_key=True)
@@ -1382,6 +1383,7 @@ Meta是非常有用的，[更多参考信息](https://docs.djangoproject.com/en/
         pass
 
     # 共同的父类像这样
+
     class Piece(models.Model):
         pass
 
